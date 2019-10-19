@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bLj-FX-95J">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Infinite Scrolling-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InfiniteScrollingExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dwp-rZ-HNE">
+                                <rect key="frame" x="0.0" y="44" width="375" height="588"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="fup-3R-7np">
+                                <rect key="frame" x="170" y="632" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="DtV-hw-CaI"/>
+                                    <constraint firstAttribute="height" constant="35" id="xgp-pf-gX2"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Dwp-rZ-HNE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6pY-P6-gPv"/>
+                            <constraint firstItem="fup-3R-7np" firstAttribute="top" secondItem="Dwp-rZ-HNE" secondAttribute="bottom" id="JaI-W9-pD7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Dwp-rZ-HNE" secondAttribute="trailing" id="W0d-hF-keC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fup-3R-7np" secondAttribute="bottom" id="dU0-qa-HHy"/>
+                            <constraint firstItem="Dwp-rZ-HNE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hYW-XO-FQS"/>
+                            <constraint firstItem="fup-3R-7np" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pRE-Bn-TQA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Infinite Scrolling" id="IWZ-fE-ZKO"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="fup-3R-7np" id="5n9-wq-6WN"/>
+                        <outlet property="height_activityIndicator" destination="xgp-pf-gX2" id="38F-7s-VDv"/>
+                        <outlet property="tableView" destination="Dwp-rZ-HNE" id="RyE-VX-ehS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="124.58770614692655"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8oW-HY-Ihl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bLj-FX-95J" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cat-XJ-cdE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="m5l-aM-KhI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mEw-9c-PWJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-167" y="118"/>
+        </scene>
+    </scenes>
+</document>
